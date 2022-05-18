@@ -35,11 +35,11 @@
 \usepackage{
 				framed,				% nice boxes; used in Supervisor's Approval
 				geometry,			% change the margins for specific pages
-				indentfirst,		% indent first paragraph after section
+				indentfirst,			% indent first paragraph after section
 		   }
 
 \geometry{							% specify page size options for (geometry)
-				a4paper,			% paper size
+				a4paper,				% paper size
 				margin=1in,			% specified independently with hmargin vmargin
 		 }
 
@@ -47,7 +47,7 @@
 %% -----------------------------------------------------------
 \usepackage{
 				pdfpages,			% import pdfs into this document; used in Letter
-				url,				% allows urls to be added to document
+				url,					% allows urls to be added to document
 				listings,			% allows code snippets
                 microtype,          % typesetting and white space management
                 % hyperref          % clickable links
@@ -60,7 +60,7 @@
 				style=ieee,			% IEEE
 		   ]
 		   {
-		   		biblatex			% bibliography management
+		   		biblatex				% bibliography management
 		   }
 
 \addbibresource{uvic-csc-work-term-report.bib}
@@ -74,7 +74,7 @@
 				showstringspaces=false,		% allow spaces in strings
 				basicstyle=\small,			% small text for code
   				frame=single,				% frame around code block
-  				breaklines=true,			% breaklines to avoid overflow
+  				breaklines=true,				% breaklines to avoid overflow
        }
 
 % Provides A Place To Write On Documents
@@ -110,19 +110,12 @@
 		% manually add entry to the ToC since section*
 		% suppresses addition to ToC
 		\addcontentsline{toc}{section}{Executive Summary}
-		\topskip=0pt							% remove top padding
+		\topskip=0pt						% remove top padding
 		\vspace*{\stretch{2}}	        		% pad 2/3 of the page length
 		\section*{Executive Summary}			% don't append a section number before "Executive Summary"
 	}
 	{   % end formatting
 		\vspace*{\stretch{3}}
-	}
-
-% Hides The Formatting For The Summary
-\newenvironment{Professional Reflection}
-	{   % beginning formatting
-		\addcontentsline{toc}{section}{Professional Reflection}
-		\section*{Professional Reflection}
 	}
 
 % Hides The Formatting For The Glossary
@@ -146,11 +139,15 @@
 \include{sections/titlepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Front Matter											%%
+%%    Reflection											%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-\includepdf{letter/uvic-csc-letter-of-transmittal}
+\include{sections/professional-reflection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    Front Matter											%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 \addtocontents{toc}{~\hfill\textbf{Page}\par}	% add 'Page' above the page numbers
@@ -169,9 +166,8 @@
 \addtocontents{lot}{~\hfill\textbf{Page}\par}
 \listoftables
 
-% Include Executive Summary, Professional Reflection, and Glossary
+% Include Executive Summary, and Glossary
 \include{sections/executive-summary}	
-\include{sections/professional-reflection}
 \include{sections/glossary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -205,5 +201,12 @@
 
 \StartAppendices{}
 \include{sections/appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    Letter												%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\includepdf{letter/uvic-csc-letter-of-transmittal}
 
 \end{document}
