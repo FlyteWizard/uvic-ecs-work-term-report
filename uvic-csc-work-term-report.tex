@@ -1,80 +1,80 @@
 %////////////////////////////////////////////////////////////%
-%/    PREAMBLE												/%
+%/    PREAMBLE                                              /%
 %////////////////////////////////////////////////////////////%
 
 \documentclass[12pt]{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Packages												%%
+%%    Packages                                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Fonts and Symbols
 %% -----------------------------------------------------------
 \usepackage{
-				amsmath,			% math operators
-				amssymb,			% math symbols
-		   }
+        amsmath,                            % math operators
+        amssymb,                            % math symbols
+       }
 
 %% Graphics
 %% -----------------------------------------------------------
 \usepackage{
-				graphicx,			% allows insertion of images
-				subfigure,			% allows subfigures (a), (b), etc.
-		   }
+    graphicx,               % allows insertion of images
+        subfigure,          % allows subfigures (a), (b), etc.
+       }
 
 %% Tables
 %% -----------------------------------------------------------
 \usepackage{
-				booktabs,			% better tables, discourages vertical rulings
-				multicol,			% allow multi columns
-				tabularx,			% allows for full width tables
-		   }
+        booktabs,     % better tables, discourages vertical rulings
+        multicol,     % allow multi columns
+        tabularx,     % allows for full width tables
+       }
 
 %% Layout Alteration
 %% -----------------------------------------------------------
 \usepackage{
-				framed,				% nice boxes; used in Supervisor's Approval
-				geometry,			% change the margins for specific pages
-				indentfirst,			% indent first paragraph after section
-		   }
+        framed,       % nice boxes; used in Supervisor's Approval
+        geometry,     % change the margins for specific pages
+        indentfirst,  % indent first paragraph after section
+       }
 
-\geometry{							% specify page size options for (geometry)
-				a4paper,				% paper size
-				margin=1in,			% specified independently with hmargin vmargin
-		 }
+\geometry{              % specify page size options for (geometry)
+        a4paper,        % paper size
+        margin=1in,     % specified independently with hmargin vmargin
+     }
 
 %% Misc
 %% -----------------------------------------------------------
 \usepackage{
-				pdfpages,			% import pdfs into this document; used in Letter
-				url,					% allows urls to be added to document
-				listings,			% allows code snippets
+        pdfpages,     % import pdfs into this document; used in Letter
+        url,          % allows urls to be added to document
+        listings,     % allows code snippets
                 microtype,          % typesetting and white space management
                 % hyperref          % clickable links
-		   }
+       }
 
 %% Bibliography
 %% -----------------------------------------------------------
 \usepackage[
-				backend=biber,		% processor for bibliography
-				style=ieee,			% IEEE
-		   ]
-		   {
-		   		biblatex				% bibliography management
-		   }
+        backend=biber,    % processor for bibliography
+        style=ieee,       % IEEE
+       ]
+       {
+           biblatex       % bibliography management
+       }
 
 \addbibresource{uvic-csc-work-term-report.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Macros and Commands									%%
+%%    Macros and Commands                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Code Blocks Presets
 \lstset{
-				showstringspaces=false,		% allow spaces in strings
-				basicstyle=\small,			% small text for code
-  				frame=single,				% frame around code block
-  				breaklines=true,				% breaklines to avoid overflow
+        showstringspaces=false,   % allow spaces in strings
+        basicstyle=\small,        % small text for code
+          frame=single,           % frame around code block
+          breaklines=true,        % breaklines to avoid overflow
        }
 
 % Provides A Place To Write On Documents
@@ -82,7 +82,7 @@
 
 % Set Up Page Numbering For Appendices; As (Appendix Letter) - (Page Number)
 \providecommand{\StartAppendices}{
-	\newpage
+  \newpage
     \newcounter{AppendixCounter}
     \renewcommand{\thepage}{\Alph{AppendixCounter} \textendash\ \arabic{page}}
 }
@@ -101,63 +101,63 @@
 \renewcommand{\contentsname}{Table of Contents}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Environments											%%
+%%    Environments                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Hides The Formatting For The Summary
 \newenvironment{Executive Summary}
-	{   % beginning formatting
-		% manually add entry to the ToC since section*
-		% suppresses addition to ToC
-		\addcontentsline{toc}{section}{Executive Summary}
-		\topskip=0pt						% remove top padding
-		\vspace*{\stretch{2}}	        		% pad 2/3 of the page length
-		\section*{Executive Summary}			% don't append a section number before "Executive Summary"
-	}
-	{   % end formatting
-		\vspace*{\stretch{3}}
-	}
+  { % beginning formatting
+    % manually add entry to the ToC since section*
+    % suppresses addition to ToC
+    \addcontentsline{toc}{section}{Executive Summary}
+    \topskip=0pt                      % remove top padding
+    \vspace*{\stretch{2}}             % pad 2/3 of the page length
+    \section*{Executive Summary}      % don't append a section number before "Executive Summary"
+  }
+  { % end formatting
+    \vspace*{\stretch{3}}
+  }
 
 % Hides The Formatting For The Glossary
 \newenvironment{Glossary}
-	{ 	%beginning formatting
-		\addcontentsline{toc}{section}{Glossary}
- 		\section*{Glossary}
-	}
+  { %beginning formatting
+    \addcontentsline{toc}{section}{Glossary}
+     \section*{Glossary}
+  }
 
 %////////////////////////////////////////////////////////////%
-%/    BODY													/%
+%/    BODY                                                  /%
 %////////////////////////////////////////////////////////////%
 
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Title Page											%%
+%%    Title Page                                            %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\pagenumbering{gobble}							% turn off page numbering
+\pagenumbering{gobble}              % turn off page numbering
 \include{sections/titlepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Reflection											%%
+%%    Reflection                                            %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 \include{sections/professional-reflection}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Front Matter											%%
+%%    Front Matter                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-\addtocontents{toc}{~\hfill\textbf{Page}\par}	% add 'Page' above the page numbers
+\addtocontents{toc}{~\hfill\textbf{Page}\par} % add 'Page' above the page numbers
 
 \tableofcontents
 
 \newpage
-\pagenumbering{roman}							% i, ii, iii, etc... page numbering
+\pagenumbering{roman}             % i, ii, iii, etc... page numbering
 
-\addcontentsline{toc}{section}{\listfigurename}	% manually add to ToC
+\addcontentsline{toc}{section}{\listfigurename} % manually add to ToC
 \addtocontents{lof}{~\hfill\textbf{Page}\par}
 \listoffigures
 
@@ -167,15 +167,15 @@
 \listoftables
 
 % Include Executive Summary, and Glossary
-\include{sections/executive-summary}	
+\include{sections/executive-summary}
 \include{sections/glossary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Main Body												%%
+%%    Main Body                                             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-\pagenumbering{arabic}							% 1, 2, 3, etc... page numbering
+\pagenumbering{arabic}              % 1, 2, 3, etc... page numbering
 
 % Include Introduction, Discussion, Conclusion, and Recommendation
 \include{sections/introduction}
@@ -184,26 +184,26 @@
 \include{sections/recommendation}
 
 % Include Acknowledgments
-\addcontentsline{toc}{section}{Acknowledgments}	% manually add to ToC
+\addcontentsline{toc}{section}{Acknowledgments} % manually add to ToC
 \include{sections/acknowledgments}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    References											%%
+%%    References                                            %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-\renewcommand*{\UrlFont}{\rmfamily}				% preserve default font for URLs
+\renewcommand*{\UrlFont}{\rmfamily}       % preserve default font for URLs
 \printbibliography[heading=bibintoc,title={References}]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Back Matter											%%
+%%    Back Matter                                           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \StartAppendices{}
 \include{sections/appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Letter												%%
+%%    Letter                                               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
