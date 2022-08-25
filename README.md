@@ -30,7 +30,7 @@ And finally, the file `letter.tex` is the letter of transmittal. To include the 
 
 MIT License
 
-## Acknowledgments
+## Acknowledgements
 
 The template is based on [https://github.com/trstephen/work-term-report](https://github.com/trstephen/work-term-report).
 
