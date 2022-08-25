@@ -9,7 +9,7 @@ A template following the [Computer Science Work Term Report Guidelines](./admin/
 
 The report template can be copied and modified in Overleaf. To learn more about copying a project in Overleaf read "[Copying A Project](https://www.overleaf.com/learn/how-to/Copying_a_project)".
 
-https://overleaf.com/read/
+[https://www.overleaf.com/read/zrrbdkncbxhf](https://www.overleaf.com/read/zrrbdkncbxhf)
 
 ## Report Structure
 
@@ -38,5 +38,4 @@ The template is based on [https://github.com/trstephen/work-term-report](https:/
 
 Overleaf allows users to refer a friend. You can learn more about referring a friend here: [Help us spread the word about Overleaf](https://www.overleaf.com/user/bonus).
 
-- [Overleaf Referral Link](https://www.overleaf.com?r=CxCY1gVMJzbSHx3j&rm=d&rs=b
-)
+- [Overleaf Referral Link](https://www.overleaf.com?r=CxCY1gVMJzbSHx3j&rm=d&rs=b)
