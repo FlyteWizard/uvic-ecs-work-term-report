@@ -17,10 +17,10 @@ The report structure is spilt up into sections. It also includes a template for 
 
 The file `main.tex` is the entry point of the report. All the preamble and imports are within this file. If you want to add a section you'll need to include it in `main.tex`.
 
-The file `bibliography.bib` is the biography. Add all your references to this file. Once they are include you can reference them within the report by using the `\cite{}` command. To learn more about BibLaTeX read [Getting started with BibLaTeX
-](https://www.overleaf.com/learn/latex/Articles/Getting_started_with_BibLaTeX). The following tool is helpful in validating and formatting your BIB file: [https://flamingtempura.github.io/bibtex-tidy/](https://flamingtempura.github.io/bibtex-tidy/).
+The file `bibliography.bib` is the bibliography. Add all your references to this file. Once they are include you can reference them within the report by using the `\cite{}` command. To learn more about BibLaTeX read "[Getting started with BibLaTeX
+](https://www.overleaf.com/learn/latex/Articles/Getting_started_with_BibLaTeX)". The following tool is helpful in validating and formatting your BIB file: [BibTeX Tidy](https://flamingtempura.github.io/bibtex-tidy/).
 
-The `sections` folder includes all the report sections (title, professional reflection, executive summary, glossary, introduction, discussion, conclusion, recommendation, acknowledgements, and appendix). In addition, there is a `discussion`folder. The folder splits up the discussion into readable parts. You can create a TEX file for each section heading within discussion.
+The `sections` folder includes all the report sections (title, professional reflection, executive summary, glossary, introduction, discussion, conclusion, recommendation, acknowledgements, and appendix). In addition, there is a `discussion` folder. The folder splits up the discussion into readable parts. You can create a TEX file for each section heading within discussion.
 
 The `figures` and `snippets` folders are for images and code files respectively.
 
