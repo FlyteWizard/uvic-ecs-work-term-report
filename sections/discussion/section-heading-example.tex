@@ -1,0 +1,23 @@
+% SECTION HEADINGS EXAMPLE
+\subsection{Section Headings Example}
+
+The following is an example of section headings. The section headings available are section, subsection, subsubsection, and paragraph. A fifth section heading can be include with a command. The command will be like the command for adding paragraph as a heading. Listing \ref{latex-command} shows the code needed to include a fifth section heading.
+
+\vspace{0.25cm}
+
+\begin{lstlisting}[language=TEX,caption=LaTeX Command,label=latex-command]
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\titleformat{\subparagraph}
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+\titlespacing*{\subparagraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\end{lstlisting}
+
+\subsubsection{SubSubSection Heading Example}
+
+This is a subsubsection heading example. The section title will appear in the table of contents automatically.
+
+\paragraph{Paragraph Heading Example}
+
+This is a paragraph heading example. The section title will appear in the table of contents. It is manually added with the commands found in `main.text'.
