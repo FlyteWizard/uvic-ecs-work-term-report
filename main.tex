@@ -1,0 +1,153 @@
+% Work Term Report
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[dvipsnames,svgnames,x11names]{xcolor} % additional colours
+\usepackage[indent=40pt]{parskip} % space between paragraphs
+\usepackage{framed} % creates boxes
+\usepackage{graphicx} % allows images to be imported
+\usepackage{listings} % code blocks
+\usepackage{geometry} % page layout parameters
+\usepackage{indentfirst} % indent the first paragraph after sections
+\usepackage{tabularx} % better tables
+\usepackage{booktabs} % better tables
+\usepackage{titlesec} % allows for additional section titles
+\usepackage[backend=biber,style=ieee]{biblatex} % default to biber and IEEE
+\usepackage{pdfpages} % include PDF pages within the report
+\usepackage{amsmath,amssymb} % math package
+\usepackage{xurl} % better links
+
+% hyperref should appear as the last package
+\usepackage{hyperref} % clickable links for toc, references, and external links
+
+% Package Settings
+\lstdefinestyle{CustomCodeStyling}{
+    backgroundcolor=\color{Honeydew2},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{DarkGreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=CustomCodeStyling} % code block styling
+
+\geometry{a4paper, margin=1in} % a4paper and smaller margins
+
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=Blue,     % internal links
+    citecolor=Green,    % citation links
+    urlcolor=Red,       % external links
+    pdftitle={Work Term Report},
+} % link styles
+
+% Bibliography
+\addbibresource{bibliography.bib}
+
+% Commands
+\renewcommand{\contentsname}{Table of Contents} % update toc heading
+\renewcommand{\lstlistlistingname}{List of Listings} % update listings heading
+
+\setcounter{secnumdepth}{4} % allows \paragraph{} to be a section
+\setcounter{tocdepth}{4} % allows \paragraph{} to be included in toc
+
+% add \paragraph{} section title format
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\providecommand{\blankline}[1]{\rule{#1}{0.5pt}} % a blank line
+
+% command to number appendices
+\providecommand{\StartAppendices}{
+    \newpage
+    \newcounter{AppendixCounter}
+    \renewcommand{\thepage}{\Alph{AppendixCounter} \textendash\ \arabic{page}}
+}
+% command to add appendices to toc
+\providecommand{\Appendix}[1]{
+    \newpage
+    \stepcounter{AppendixCounter}
+    \setcounter{page}{1}
+    \section*{Appendix \Alph{AppendixCounter} - #1}
+    \addcontentsline{toc}{section}{Appendix \Alph{AppendixCounter} - #1}
+}
+
+% Document
+\begin{document}
+
+% TITLE PAGE
+\pagenumbering{gobble} % remove page number
+\include{sections/title.tex}
+
+% PROFESSIONAL REFLECTION PAGE
+\newpage
+\include{sections/professional-reflection.tex}
+
+% TABLE OF CONTENTS
+\newpage
+\addtocontents{toc}{~\hfill\textbf{Page}\par} % add Page to right side of toc
+\tableofcontents % table of contents
+
+% TECHNICAL
+\newpage
+\pagenumbering{roman} % add roman (i, ii, iii, v) page numbers
+
+\phantomsection
+\addcontentsline{toc}{section}{\listfigurename}
+\addtocontents{lof}{~\hfill\textbf{Page} \par}  % add Page to right side of lof
+\listoffigures % list of figures
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{\lstlistlistingname}
+\addtocontents{lol}{~\hfill\textbf{Page} \par} % add Page to right side of lol
+\lstlistoflistings % list of listings
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{\listtablename}
+\addtocontents{lot}{~\hfill\textbf{Page} \par}  % add Page to right side of lot
+\listoftables % list of tables
+
+% ADMIN
+\addcontentsline{toc}{section}{Executive Summary}
+\include{sections/executive-summary.tex}
+
+\addcontentsline{toc}{section}{Glossary}
+\include{sections/glossary.tex}
+
+% REPORT
+\newpage
+\pagenumbering{arabic} % add arabic (1, 2, 3, 4) page numbers
+
+\include{sections/introduction.tex}
+\include{sections/discussion.tex}
+\include{sections/conclusion.tex}
+\include{sections/recommendation.tex}
+
+\addcontentsline{toc}{section}{Acknowledgements} % add to toc
+\include{sections/acknowledgments.tex}
+
+% REFERENCES
+\newpage
+\renewcommand*{\UrlFont}{\rmfamily} % font format for URLs
+\printbibliography[heading=bibintoc,title={References}]
+
+% APPENDICES
+\StartAppendices
+\include{sections/appendix.tex}
+
+% LETTER
+\includepdf[pages=1]{letter.pdf}
+
+\end{document}

@@ -1,0 +1,19 @@
+% Table Example
+\subsection{Table Example}
+
+Table \ref{table:table-example} is an example of a table and its reference. The table is centered, but it can appear in any alignment. You can also use the tabularx package to manipulate the appearance.
+
+\vspace{0.25cm}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l|l|l|}
+        \cline{2-3}
+                                          & \textbf{Heading} & \textbf{Heading} \\ \hline
+        \multicolumn{1}{|l|}{Sub Heading} & Text             & Text             \\ \hline
+        \multicolumn{1}{|l|}{Sub Heading} & Text             & Text             \\ \hline
+    \end{tabular}
+    \caption{Table Example}
+    \label{table:table-example}
+\end{table}
+
