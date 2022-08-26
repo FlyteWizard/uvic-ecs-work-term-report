@@ -39,7 +39,7 @@
 }
 \lstset{style=CustomCodeStyling} % code block styling
 
-\geometry{a4paper, margin=1in} % a4paper and smaller margins
+\geometry{a4paper,margin=1in} % a4paper and smaller margins
 
 \hypersetup{
     breaklinks=true,
@@ -120,9 +120,11 @@
 \listoftables % list of tables
 
 % ADMIN
+\phantomsection
 \addcontentsline{toc}{section}{Executive Summary}
 \include{sections/executive-summary.tex}
 
+\phantomsection
 \addcontentsline{toc}{section}{Glossary}
 \include{sections/glossary.tex}
 
@@ -135,6 +137,7 @@
 \include{sections/conclusion.tex}
 \include{sections/recommendation.tex}
 
+\phantomsection
 \addcontentsline{toc}{section}{Acknowledgements} % add to toc
 \include{sections/acknowledgments.tex}
 
