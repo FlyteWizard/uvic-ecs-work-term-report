@@ -79,6 +79,7 @@
     \stepcounter{AppendixCounter}
     \setcounter{page}{1}
     \section*{Appendix \Alph{AppendixCounter} - #1}
+    \phantomsection
     \addcontentsline{toc}{section}{Appendix \Alph{AppendixCounter} - #1}
 }
 
@@ -120,10 +121,12 @@
 \listoftables % list of tables
 
 % ADMIN
+\newpage
 \phantomsection
 \addcontentsline{toc}{section}{Executive Summary}
 \include{sections/executive-summary.tex}
 
+\newpage
 \phantomsection
 \addcontentsline{toc}{section}{Glossary}
 \include{sections/glossary.tex}
@@ -143,6 +146,7 @@
 
 % REFERENCES
 \newpage
+\phantomsection
 \renewcommand*{\UrlFont}{\rmfamily} % font format for URLs
 \printbibliography[heading=bibintoc,title={References}]
 
