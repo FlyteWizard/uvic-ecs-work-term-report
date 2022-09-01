@@ -20,6 +20,9 @@
 % hyperref should appear as the last package
 \usepackage{hyperref} % clickable links for toc, references, and external links
 
+% glossaries needs to appear after hyperref for clickable links
+\usepackage[xindy]{glossaries} % generated glossary
+
 % Package Settings
 \lstdefinestyle{CustomCodeStyling}{
     backgroundcolor=\color{Honeydew2},
@@ -53,6 +56,10 @@
 % Bibliography
 \addbibresource{bibliography.bib}
 
+% Glossary
+\input{glossary.tex}
+\makeglossaries
+
 % Commands
 \renewcommand{\contentsname}{Table of Contents} % update toc heading
 \renewcommand{\lstlistlistingname}{List of Listings} % update listings heading
@@ -61,8 +68,7 @@
 \setcounter{tocdepth}{4} % allows \paragraph{} to be included in toc
 
 % add \paragraph{} section title format
-\titleformat{\paragraph}
-{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titleformat{\paragraph}{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \providecommand{\blankline}[1]{\rule{#1}{0.5pt}} % a blank line
@@ -129,7 +135,7 @@
 \newpage
 \phantomsection
 \addcontentsline{toc}{section}{Glossary}
-\include{sections/glossary.tex}
+\printglossaries
 
 % REPORT
 \newpage
